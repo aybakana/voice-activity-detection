@@ -38,7 +38,8 @@ public class VoiceDetectionSystem
                     {
                         var spectrum = _fft.Process(audioFrame);
                         var features = _vad.ExtractFeatures(spectrum);
-                        bool isVoiceDetected = _vad.IsVoiceDetected(features);
+                        bool isVoiceDetected = !_vad.IsVoiceDetected(features);
+                        Console.WriteLine($"Voice detected: {isVoiceDetected}");
                     }
                     catch (OperationCanceledException)
                     {

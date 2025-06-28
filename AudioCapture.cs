@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 public class AudioCapture
 {
     public int SamplingRate { get; set; } = 44100;
-    public int FrameSizeMs { get; set; } = 10; // 10ms
+    public int FrameSizeMs { get; set; } = 50; // 10ms
     public short[] Buffer { get; private set; }
     public event EventHandler<short[]> OnFrameCaptured;
 
